@@ -1,4 +1,4 @@
-# -Intelligent-Enterprise-Assistant-SIH1706
+# Intelligent-Enterprise-Assistant-SIH1706
 
 ## AIM
 To develop an AI-powered Intelligent Enterprise Assistant capable of handling HR, IT, and organizational queries, document summarization, and secure authentication using NLP and document processing.
@@ -414,7 +414,10 @@ elif page == "Chat":
             st.write(res.json().get("answer", "No response"))
 ```
 
-## Output
+## Output:
+
+
+
 
 
 🧾 Result
