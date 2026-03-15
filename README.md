@@ -416,7 +416,7 @@ elif page == "Chat":
 
 ## Output:
 
-
+![image](https://github.com/Krishna23013541/Intelligent-Enterprise-Assistant-SIH1706/blob/main/Screenshot%202025-11-04%20093531.png?raw=true)
 
 
 
