@@ -1,47 +1,66 @@
-# Intelligent-Enterprise-Assistant-SIH1706
+# Intelligent Enterprise Assistant — SIH1706
 
 ## AIM
 To develop an AI-powered Intelligent Enterprise Assistant capable of handling HR, IT, and organizational queries, document summarization, and secure authentication using NLP and document processing.
 
-## Problem Statement
-Problem ID: SIH1706
-Title: Intelligent Enterprise Assistant — Enhancing Organizational Efficiency through AI-Driven Chatbot Integration
+---
 
-## System Should Perform
-Handle HR, IT, and organizational questions
-Process uploaded enterprise documents (summarize, extract keywords)
-Use email-based OTP for 2-Factor Authentication
-Filter bad language using a system-maintained dictionary
-Respond within 5 seconds for any query
-Support a minimum of 5 parallel users
+## Problem Statement
+
+**Problem ID:** SIH1706  
+**Title:** Intelligent Enterprise Assistant — Enhancing Organizational Efficiency through AI-Driven Chatbot Integration
+
+### System Should Perform
+- Handle HR, IT, and organizational questions  
+- Process uploaded enterprise documents (summarize, extract keywords)  
+- Use email-based OTP for 2-Factor Authentication  
+- Filter bad language using a system-maintained dictionary  
+- Respond within 5 seconds for any query  
+- Support a minimum of 5 parallel users  
+
+---
+
 ## Implementation Steps
-🔹 Backend (FastAPI)
-Built using FastAPI framework
-Endpoints implemented:
-/auth/send-otp — Email OTP generation
-/auth/verify-otp — OTP verification
-/upload/document — Uploads and processes documents
-/query — NLP-based query handling
-Includes SMTP OTP (prints OTP to console if SMTP not configured)
-Handles PDF/DOCX summarization using TF-IDF
-Filters profanity from user queries
-🔹 Frontend (Streamlit)
+
+### Backend (FastAPI)
+- Built using FastAPI framework  
+- Endpoints implemented:  
+  - `/auth/send-otp` — Email OTP generation  
+  - `/auth/verify-otp` — OTP verification  
+  - `/upload/document` — Uploads and processes documents  
+  - `/query` — NLP-based query handling  
+- Includes SMTP OTP (prints OTP to console if SMTP not configured)  
+- Handles PDF/DOCX summarization using TF-IDF  
+- Filters profanity from user queries  
+
+---
+
+### 🔹 Frontend (Streamlit)
 Simple web UI for:
 
-1.Authentication
-2.Document Upload
-3.Query Interaction
+- Authentication  
+- Document Upload  
+- Query Interaction  
+
 Uses FastAPI backend via API calls and displays assistant responses in an interactive chat view.
 
-🔹 Security
-2FA with Email OTP
-Session token for each verified user
-In-memory user sessions (demo mode)
-🔹 Scalability
-FastAPI’s async architecture allows parallel processing
-Each request processed under 5 seconds
+---
 
-## Main Backend Code — main.py
+### 🔹 Security
+- 2FA with Email OTP  
+- Session token for each verified user  
+- In-memory user sessions (demo mode)
+
+---
+
+### 🔹 Scalability
+- FastAPI’s async architecture allows parallel processing  
+- Each request processed under 5 seconds  
+
+---
+
+## Main Backend Code — `main.py`
+
 ```
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import HTMLResponse
@@ -210,10 +229,14 @@ async def root():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("sih_chatbot:app", host="0.0.0.0", port=8000, reload=True)
+
 ```
 
- ## Frontend Code — frontend.py
- ```
+---
+
+## Frontend Code — `frontend.py`
+
+```
 import streamlit as st
 import requests
 
@@ -414,12 +437,19 @@ elif page == "Chat":
             st.write(res.json().get("answer", "No response"))
 ```
 
-## Output:
+---
 
-![image](https://github.com/Krishna23013541/Intelligent-Enterprise-Assistant-SIH1706/blob/main/Screenshot%202025-11-04%20093531.png?raw=true)
+## 🧾 Output
 
+![alt text](<Screenshot 2025-11-04 093531.png>)
 
+![alt text](<Screenshot 2025-11-04 093742.png>)
 
-🧾 Result
+![alt text](<Screenshot 2025-11-04 093822.png>)
+
+---
+
+## 🧾 Result
 Your chatbot now functions as a secure, intelligent assistant capable of answering HR and enterprise queries, handling documents, and demonstrating AI integration for the public sector.
 
+---
